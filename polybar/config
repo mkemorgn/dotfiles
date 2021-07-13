@@ -349,8 +349,9 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+thermal-zone = 2
+interval = 1
+warn-temperature = 180
 format-prefix="🔥 "
 format = <label>
 format-underline = ${xrdb:color14:#f50a4d}
@@ -359,6 +360,12 @@ format-warn-underline = ${colors.alert}
 label = %temperature-f%
 label-warn = %temperature-f%
 label-warn-foreground = ${colors.secondary}
+
+[module/temp]
+type = custom/script
+exec = ~/.config/polybar-scripts/system-cpu-temppercore/system-cpu-temppercore.sh
+interval = 600
+label-font = 4
 
 
 [module/openweathermap-simple]
