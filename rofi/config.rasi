@@ -2,12 +2,12 @@ configuration {
     display-drun: "";
 }
 * {
-    background-color:            #282828;
+    background-color:            #2f343f;
     border-color:                #1d2021;
-    text-color:                  #d5c4a1;
+    text-color:                  #ffffff;
     font:                        "TerminessTTF Nerd Font Medium 10";
     prompt-font:                 "TerminessTTF Nerd Font Medium 10";
-    prompt-background:           #282828;
+    prompt-background:           #2f343f;
     prompt-foreground:           #282828;
     prompt-padding:              4px;
     alternate-normal-background: #1c1f24;
