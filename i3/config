@@ -82,7 +82,7 @@ bindsym $super+m bar mode toggle
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=20'"
-bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 20'
+bindsym $super+d exec rofi -show drun -font 'Noto Sans 20'
 
 # Garuda Linux install
 bindsym $super+i exec sudo -E calamares
