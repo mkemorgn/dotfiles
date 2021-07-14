@@ -74,7 +74,7 @@ font-5 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 modules-left = i3 spotify xkeyboard
 modules-center = openweathermap-simple
 ;modules-right = filesystem temperature cpu memory battery-combined-shell
-modules-right = pulseaudio temperature cpu memory battery date
+modules-right = pulseaudio temp cpu memory battery date
 
 ; wm-restack = bspwm
 wm-restack = i3
@@ -363,8 +363,10 @@ label-warn-foreground = ${colors.secondary}
 
 [module/temp]
 type = custom/script
-exec = ~/.config/polybar-scripts/system-cpu-temppercore/system-cpu-temppercore.sh
-interval = 600
+exec = python ~/.config/polybar/cpu_temp.py
+interval = 3
+format-prefix="🔥 "
+format-underline = ${xrdb:color14:#f50a4d}
 label-font = 4
 
 
