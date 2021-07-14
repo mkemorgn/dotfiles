@@ -368,6 +368,8 @@ interval = 3
 format-prefix="🔥 "
 format-underline = ${xrdb:color14:#f50a4d}
 label-font = 4
+label = %output%℉
+format = <label>
 
 
 [module/openweathermap-simple]
