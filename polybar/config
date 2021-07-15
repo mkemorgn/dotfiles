@@ -381,7 +381,7 @@ label-font = 4
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "🎵 "
+format-prefix = " "
 format = <label>
 exec = python   /home/mikem/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
 
