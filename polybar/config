@@ -90,6 +90,9 @@ wm-restack = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+tray-position = right
+tray-detached = false
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -126,29 +129,6 @@ label-mounted = %{F#6688aa}%mountpoint%%{F-}: %free%
 label-unmounted = (%mountpoint%)
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %{T1}%name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-visible-underline= ${colors.secondary}
-label-focused-foreground = ${colors.foreground-alt}
-label-focused-padding = 2
-
-label-occupied = %{T1}%name%
-label-occupied-padding = 2
-
-label-urgent = !%{T1}%name%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %{T1}%name%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -160,13 +140,15 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 ; Workspace icons
-ws-icon-0 = "1;"
-ws-icon-1 = "2;"
-ws-icon-2 = "3;"
-ws-icon-3 = "9;"
-
-ws-icon-default = 
-
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-default = ♟
 label-mode-padding = 2
 label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.primary}
@@ -199,55 +181,12 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 label-urgent-font = 3
 
 ; Separator in between workspaces
-label-separator = |
-
-[module/mpd]
-type = internal/mpd
-format-online = %{T3}<icon-prev> <icon-stop> <toggle> <icon-next> %{T1}<label-time> <bar-progress> %{T1}<label-song>
-format-online-overline = ${root.background}
-format-online-underline = ${root.background}
-format-offline = <label-offline>
-label-offline = mpd is off
-
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
-icon-seekb = 
-icon-seekf = 
-icon-random = 列
-icon-repeat = 凌
-icon-repeatone = 綾
-icon-single = 綾
-icon-consume = ✀
-
-label-song-maxlen = 100
-label-song-ellipsis = true
-
-bar-progress-width = 20
-bar-progress-format = %{+o +u}%fill%%{-o -u}%indicator%%{+o +u}%empty%%{-u -o}
-; bar-progress-indicator = |
-bar-progress-indicator = █
-bar-progress-indicator-foreground = ${colors.foreground}
-bar-progress-indicator-font = 3
-; bar-progress-fill = ─
-bar-progress-fill = █
-bar-progress-fill-foreground = ${colors.foreground-alt}
-bar-progress-fill-font = 3
-; bar-progress-empty = ─
-bar-progress-empty = ▒
-bar-progress-empty-font = 3
-bar-progress-empty-foreground = ${colors.background-alt}
-
-toggle-on-foreground = ${colors.foreground}
-toggle-off-foreground = ${colors.foreground-alt}
+label-separator = " | "
 
 [module/cpu]
 type = internal/cpu
 interval = 0.2
 format-prefix = "💻 "
-;format = <label> <ramp-coreload>
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color13:#f90000}
 label = %percentage%%
@@ -256,14 +195,10 @@ label-font = 5
 [module/memory]
 type = internal/memory
 interval = 0.2
-; format = <label> <bar-used>
 label = %gb_used%/%gb_free%
 format-prefix = "🧠 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${xrdb:color13:#4bffdc}
-; label = %percentage_used:2%%
-
-;llabel = MEM
 label-font = 1
 label-foreground = #99
 
@@ -356,7 +291,6 @@ format-prefix="🔥 "
 format = <label>
 format-underline = ${xrdb:color14:#f50a4d}
 format-warn-underline = ${colors.alert}
-
 label = %temperature-f%
 label-warn = %temperature-f%
 label-warn-foreground = ${colors.secondary}
@@ -371,7 +305,6 @@ label-font = 4
 label = %output%℉
 format = <label>
 
-
 [module/openweathermap-simple]
 type = custom/script
 exec = ~/.config/polybar-scripts/openweathermap-simple/openweathermap-simple.sh
@@ -383,9 +316,7 @@ type = custom/script
 interval = 1
 format-prefix = " "
 format = <label>
-exec = python   /home/mikem/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
-
+exec = python ~/.config/polybar/spotify.py  -f '{play_pause} {song} - {artist} - {album}'
 format-underline = #1db954
-
 
 ; vim:ft=dosini

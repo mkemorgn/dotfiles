@@ -2,7 +2,7 @@
 
 import dbus
 
-trunclen = 25
+trunclen = 30
 
 try:
     session_bus = dbus.SessionBus()
@@ -21,7 +21,7 @@ try:
         if ('(' in song) and (')' not in song):
             song += ')'
 
-    output = artist + ': ' + song
+    output = artist + ' - ' + song
     print(output)
 except:
     print("")
