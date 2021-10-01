@@ -76,6 +76,7 @@ exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 exec xlayoutdisplay
 exec_always "/home/mikem/styli.sh/styli.sh"
 exec udiskie &
+exec_always redshift &
 
 # hide/unhide i3status bar
 bindsym $super+m bar mode toggle
