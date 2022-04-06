@@ -21,7 +21,7 @@ set $lockScreenWallpaper /usr/share/wallpapers/garuda-wallpapers/Dragon.png
 ### Applications: ###
 
 set $preferredTerminalEmulator /usr/bin/alacritty
-set $preferredBrowser /usr/bin/brave
+set $preferredBrowser /usr/bin/firefox
 set $preferredFileManager /usr/bin/thunar
 set $preferredTextEditor /usr/bin/emacs
 set $preferredScreenCaptureTool /usr/bin/flameshot gui
@@ -33,6 +33,7 @@ set $preferredScreenCaptureTool /usr/bin/flameshot gui
 bindsym $super+b exec $preferredBrowser;focus
 bindsym $super+z exec $preferredFileManager;focus
 bindsym $super+e exec $preferredTextEditor;focus
+bindsym $super+o exec obsidian
 
 ### Screen Capturing & Print Screen: ###
 
